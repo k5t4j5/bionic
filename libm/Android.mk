@@ -266,6 +266,12 @@ LOCAL_SYSTEM_SHARED_LIBRARIES := libc
 LOCAL_C_INCLUDES_arm := $(LOCAL_PATH)/arm
 LOCAL_SRC_FILES_arm := arm/fenv.c
 
+ifeq ($(TARGET_CPU_VARIANT),krait)
+  libm_arm_src_files += \
+	arm/e_pow.S
+  libm_arm_cflags += -DKRAIT_NEON_OPTIMIZATION
+endif
+
 ifeq ($(ARCH_ARM_HAVE_NEON),true)
   libm_arm_src_files += \
     arm/s_modf.S
