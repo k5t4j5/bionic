@@ -289,8 +289,6 @@ LOCAL_C_INCLUDES_arm := $(LOCAL_PATH)/arm
 LOCAL_SRC_FILES_arm := arm/fenv.c
 
 ifeq ($(TARGET_CPU_VARIANT),krait)
-  libm_arm_src_files += \
-	arm/e_pow.S
   libm_arm_cflags += -DKRAIT_NEON_OPTIMIZATION
 endif
 
