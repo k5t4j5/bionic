@@ -93,6 +93,7 @@ libm_common_src_files += \
     upstream-freebsd/lib/msun/src/s_conjf.c \
     upstream-freebsd/lib/msun/src/s_copysign.c \
     upstream-freebsd/lib/msun/src/s_copysignf.c \
+    upstream-freebsd/lib/msun/src/s_cos.c \
     upstream-freebsd/lib/msun/src/s_cosf.c \
     upstream-freebsd/lib/msun/src/s_cproj.c \
     upstream-freebsd/lib/msun/src/s_cprojf.c \
@@ -162,6 +163,7 @@ libm_common_src_files += \
     upstream-freebsd/lib/msun/src/s_signgam.c \
     upstream-freebsd/lib/msun/src/s_significand.c \
     upstream-freebsd/lib/msun/src/s_significandf.c \
+    upstream-freebsd/lib/msun/src/s_sin.c \
     upstream-freebsd/lib/msun/src/s_sinf.c \
     upstream-freebsd/lib/msun/src/s_tan.c \
     upstream-freebsd/lib/msun/src/s_tanf.c \
@@ -222,21 +224,13 @@ libm_arm_includes := $(LOCAL_PATH)/arm
 libm_arm_src_files := arm/fenv.c
 ifeq ($(TARGET_CPU_VARIANT),krait)
   libm_arm_src_files += \
-	arm/e_pow.S	\
-	arm/s_cos.S	\
-	arm/s_sin.S
+	arm/e_pow.S
   libm_arm_cflags += -DKRAIT_NEON_OPTIMIZATION -fno-if-conversion
 else
   ifeq ($(TARGET_USE_QCOM_BIONIC_OPTIMIZATION),true)
     libm_arm_src_files += \
-      arm/e_pow.S \
-      arm/s_cos.S \
-      arm/s_sin.S
+      arm/e_pow.S
     libm_arm_cflags += -DKRAIT_NEON_OPTIMIZATION -fno-if-conversion
-  else
-    libm_common_src_files += \
-      upstream-freebsd/lib/msun/src/s_cos.c \
-      upstream-freebsd/lib/msun/src/s_sin.c
     endif
 endif
 
