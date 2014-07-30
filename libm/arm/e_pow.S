@@ -23,9 +23,10 @@
 @ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 @ POSSIBILITY OF SUCH DAMAGE.
 
-
+#include <float.h>
 #include <machine/cpu-features.h>
-#include <machine/asm.h>
+#include <private/bionic_asm.h>
+#include <private/libc_events.h>
 
 @ Values which exist the program lifetime:
 #define HIGH_WORD_MASK      d31

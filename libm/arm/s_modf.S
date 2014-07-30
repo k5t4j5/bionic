@@ -1,4 +1,5 @@
-#include <machine/asm.h>
+#include <private/bionic_asm.h>
+#include <private/libc_events.h>
 ENTRY(modf)
     push        {r4, r5, r11, lr}
     mov         r5, r1
