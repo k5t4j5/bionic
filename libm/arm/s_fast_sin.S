@@ -26,7 +26,7 @@
 #endif
 
 ENTRY(sin)
-
+    .cfi_startproc
     and             r3, r1, #0x80000000
     bic             r1, r1, #0x80000000
     vmov            d0, r0, r1
@@ -1409,7 +1409,7 @@ punt_to_ieee_sin:
     .word   0xa44ed75f, 0xbfef72dc, 0x641d0016, 0x3fc7a862
     .word   0x507038d3, 0xbfe8c366, 0x7a3edde7, 0x3fe44488
     .word   0xa22b9036, 0xbfd807a9, 0xe36a0022, 0x3feda8a2
-
+    .cfi_endproc
 END(sin)
 
     .weak           sinl
