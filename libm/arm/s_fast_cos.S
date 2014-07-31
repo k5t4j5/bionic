@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-#include <bionic_asm.h>
+#include <machine/cpu-features.h>
+#include <machine/asm.h>
 
 #if FPU_VFPV4
 	.fpu	vfpv4
