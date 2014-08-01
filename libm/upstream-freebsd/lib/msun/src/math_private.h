@@ -40,7 +40,7 @@
  */
 
 #ifdef __arm__
-#if defined(__VFP_FP__)
+#if defined(__VFP_FP__) || defined(__ARM_EABI__)
 #define	IEEE_WORD_ORDER	BYTE_ORDER
 #else
 #define	IEEE_WORD_ORDER	BIG_ENDIAN
@@ -677,11 +677,15 @@ irintl(long double x)
 #define	__ieee754_atanh	atanh
 #define	__ieee754_asin	asin
 #define	__ieee754_atan2	atan2
+#if !defined(LIBM_OPT_EXP)
+#define	__ieee754_exp	exp
+#endif
 #define	__ieee754_cosh	cosh
 #define	__ieee754_fmod	fmod
-#if !defined(ARM_MATH_OPTIMIZATIONS)
+#if !defined(LIBM_OPT_POW)
 #define	__ieee754_pow	pow
-#define	__ieee754_exp	exp
+#endif
+#if !defined(LIBM_OPT_SIN_COS)
 #define	__ieee754_sin	sin
 #define	__ieee754_cos	cos
 #endif
