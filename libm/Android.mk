@@ -52,7 +52,6 @@ libm_common_src_files += \
     upstream-freebsd/lib/msun/src/e_log2f.c \
     upstream-freebsd/lib/msun/src/e_log.c \
     upstream-freebsd/lib/msun/src/e_logf.c \
-    upstream-freebsd/lib/msun/src/e_pow.c \
     upstream-freebsd/lib/msun/src/e_powf.c \
     upstream-freebsd/lib/msun/src/e_remainder.c \
     upstream-freebsd/lib/msun/src/e_remainderf.c \
@@ -91,7 +90,6 @@ libm_common_src_files += \
     upstream-freebsd/lib/msun/src/s_conjf.c \
     upstream-freebsd/lib/msun/src/s_copysign.c \
     upstream-freebsd/lib/msun/src/s_copysignf.c \
-    upstream-freebsd/lib/msun/src/s_cos.c \
     upstream-freebsd/lib/msun/src/s_cosf.c \
     upstream-freebsd/lib/msun/src/s_cproj.c \
     upstream-freebsd/lib/msun/src/s_cprojf.c \
@@ -160,7 +158,6 @@ libm_common_src_files += \
     upstream-freebsd/lib/msun/src/s_signgam.c \
     upstream-freebsd/lib/msun/src/s_significand.c \
     upstream-freebsd/lib/msun/src/s_significandf.c \
-    upstream-freebsd/lib/msun/src/s_sin.c \
     upstream-freebsd/lib/msun/src/s_sinf.c \
     upstream-freebsd/lib/msun/src/s_tan.c \
     upstream-freebsd/lib/msun/src/s_tanf.c \
@@ -232,7 +229,10 @@ ifneq ($(TARGET_ARCH),arm)
 libm_common_src_files += \
     upstream-freebsd/lib/msun/src/s_floor.c \
     upstream-freebsd/lib/msun/src/e_sqrt.c \
-    upstream-freebsd/lib/msun/src/e_sqrtf.c
+    upstream-freebsd/lib/msun/src/e_sqrtf.c \
+    upstream-freebsd/lib/msun/src/s_cos.c \
+    upstream-freebsd/lib/msun/src/s_sin.c \
+    upstream-freebsd/lib/msun/src/e_pow.c
 endif
 
 ifeq ($(TARGET_CPU_VARIANT),cortex-a9)
@@ -269,7 +269,10 @@ else
 libm_arm_src_files += \
     upstream-freebsd/lib/msun/src/s_floor.c \
     upstream-freebsd/lib/msun/src/e_sqrt.c \
-    upstream-freebsd/lib/msun/src/e_sqrtf.c
+    upstream-freebsd/lib/msun/src/e_sqrtf.c \
+    upstream-freebsd/lib/msun/src/s_cos.c \
+    upstream-freebsd/lib/msun/src/s_sin.c \
+    upstream-freebsd/lib/msun/src/e_pow.c
 endif
 endif
 
