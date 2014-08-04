@@ -248,8 +248,9 @@ libm_arm_src_files += \
     arm/k_cos_fast.S \
     arm/s_sin_fast.S \
     arm/s_cos_fast.S \
-    arm/e_pow.S
-libm_arm_cflags += -DLIBM_OPT_SIN_COS -DLIBM_OPT_EXP -DPRECISE_TRIGONOMETRIC -DKRAIT_NEON_OPTIMIZATION -fno-if-conversion
+    arm/e_fast_pow.S \
+    arm/k_pow2.S
+libm_arm_cflags += -DLIBM_OPT_SIN_COS -DLIBM_OPT_EXP -DLIBM_POW -DPRECISE_TRIGONOMETRIC
 libm_arm_asflags += -DFPU_VFPV4 -DLIBM_OPT_SIN_COS -DLIBM_OPT_EXP -DPRECISE_TRIGONOMETRIC
 else
 libm_arm_src_files += \
