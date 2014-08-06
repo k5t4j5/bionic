@@ -232,7 +232,9 @@ libm_arm_src_files += \
     arm/k_log2.S \
     arm/e_sqrt.S \
     arm/e_sqrtf.S \
-    arm/s_floor.S
+    arm/s_floor.S \
+    upstream-freebsd/lib/msun/src/s_cos.c \
+    upstream-freebsd/lib/msun/src/s_sin.c
 else
 ifeq ($(TARGET_CPU_VARIANT),$(filter $(TARGET_CPU_VARIANT),cortex-a15 krait))
 libm_arm_src_files += \
