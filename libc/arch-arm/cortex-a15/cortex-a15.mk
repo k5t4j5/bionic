@@ -3,6 +3,7 @@ libc_bionic_src_files_arm += \
     arch-arm/cortex-a15/bionic/memcpy.S \
     arch-arm/krait/bionic/memmove.S \
     arch-arm/cortex-a15/bionic/memset.S \
+    arch-arm/cortex-a15/bionic/stpcpy.S \
     arch-arm/cortex-a15/bionic/strcat.S \
     arch-arm/cortex-a15/bionic/strcmp.S \
     arch-arm/cortex-a15/bionic/strcpy.S \
