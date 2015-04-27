@@ -679,7 +679,9 @@ irintl(long double x)
 #define	__ieee754_exp	exp
 #define	__ieee754_cosh	cosh
 #define	__ieee754_fmod	fmod
+#ifndef NEON_OPTIMIZATION
 #define	__ieee754_pow	pow
+#endif
 #define	__ieee754_lgamma lgamma
 #define	__ieee754_gamma	gamma
 #define	__ieee754_lgamma_r lgamma_r
